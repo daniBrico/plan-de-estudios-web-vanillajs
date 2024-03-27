@@ -1,5 +1,22 @@
 const d = document
 
+let $menuSelect = null
+
+const mostrarMenu = function () {
+  if ($menuSelect.classList.contains('invisible')) {
+    $menuSelect.classList.remove('invisible', 'opacity-0')
+  }
+
+  $menuSelect.classList.add('mostrar')
+  $menuSelect.classList.remove('quitar')
+}
+
+const quitarMenu = function () {
+  $menuSelect.classList.remove('mostrar')
+  $menuSelect.classList.add('quitar')
+  $menuSelect = null
+}
+
 // d.addEventListener('DOMContentLoaded', () => {
 //   fetch('../data/plan-de-estudios.json')
 //     .then((res) => (res.ok ? res.json() : Promise.reject(res)))
@@ -178,27 +195,21 @@ const d = document
 // })
 
 d.addEventListener('click', (e) => {
-  const $menuSelect = e.target.parentNode.querySelector('ul')
+  if (e.target.matches('span')) {
+    if (e.target.dataset.id) {
+      if ($menuSelect != null) {
+        quitarMenu()
+      } else {
+        $menuSelect = d
+          .getElementById(`${e.target.dataset.id}`)
+          .parentNode.querySelector('ul')
 
-  if (e.target.matches('#activeSpan')) {
-    if ($menuSelect.classList.contains('invisible')) {
-      $menuSelect.classList.remove('invisible', 'opacity-0')
-    }
-
-    if ($menuSelect.classList.contains('mostrar')) {
-      $menuSelect.classList.remove('mostrar')
-      $menuSelect.classList.add('quitar')
-    } else {
-      $menuSelect.classList.add('mostrar')
-      $menuSelect.classList.remove('quitar')
+        mostrarMenu()
+      }
     }
   }
 
-  if (
-    !e.target.matches('#activeSpan') &&
-    $menuSelect.classList.contains('mostrar')
-  ) {
-    $menuSelect.classList.remove('mostrar')
-    $menuSelect.classList.add('quitar')
+  if (!e.target.matches('span') && $menuSelect != null) {
+    quitarMenu()
   }
 })
