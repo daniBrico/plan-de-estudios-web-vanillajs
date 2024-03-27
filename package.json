@@ -1,0 +1,38 @@
+{
+  "name": "plan-de-estudios-web",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "@fontsource-variable/onest": "^5.0.3",
+    "browserslist": "^4.23.0",
+    "caniuse-lite": "^1.0.30001600",
+    "electron-to-chromium": "^1.4.717",
+    "esbuild": "^0.20.2",
+    "escalade": "^3.1.2",
+    "fraction.js": "^4.3.7",
+    "nanoid": "^5.0.6",
+    "node-releases": "^2.0.14",
+    "normalize-range": "^0.1.2",
+    "picocolors": "^1.0.0",
+    "postcss-value-parser": "^4.2.0",
+    "rollup": "^4.13.0",
+    "source-map-js": "^1.2.0",
+    "update-browserslist-db": "^1.0.13"
+  },
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "prettier-plugin-tailwindcss": "^0.5.12",
+    "tailwindcss": "^3.4.1",
+    "vite": "^5.2.6"
+  }
+}
