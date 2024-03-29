@@ -17,199 +17,105 @@ const quitarMenu = function () {
   $menuSelect = null
 }
 
-// d.addEventListener('DOMContentLoaded', () => {
-//   fetch('../data/plan-de-estudios.json')
-//     .then((res) => (res.ok ? res.json() : Promise.reject(res)))
-//     .then((data) => {
-//       const $fragment = d.createDocumentFragment(),
-//         $article = d.getElementsByTagName('article')
+const loadInformationCareer = async function () {
+  try {
+    let res = await fetch('../data/plan-de-estudios.json'),
+      data = await res.json()
 
-//       data.forEach((career) => {
-//         const $titleCareer = d.getElementById('titleCareer'),
-//           $careerDuration = d.getElementById('careerDuration')
+    const career = data[0]
 
-//         $titleCareer.textContent = career.nombreCarrera
-//         $careerDuration.textContent = `DURACIÓN: ${career.duracionCarrera} AÑOS`
-
-//         if (career.hasOwnProperty('tituloIntermedio')) {
-//           const $subCareer = d.getElementById('subCareer'),
-//             $subCareerDuration = d.getElementById('subCareerDuration')
-
-//           $subCareer.textContent = `${career.tituloIntermedio}`
-//           $subCareerDuration.textContent = `DURACIÓN: ${career.duracionDelTituloIntermedio} AÑOS`
-//         }
-
-//         career.listaDeMateriasPorAnio.forEach((course) => {
-//           const $h2 = d.createElement('h2'),
-//             $div = d.createElement('div'),
-//             $table = d.createElement('table'),
-//             $thead = d.createElement('thead'),
-//             $tbody = d.createElement('tbody'),
-//             $trh = d.createElement('tr')
-
-//           $h2.textContent = course.anio
-//           $h2.classList.add(
-//             'mb-4',
-//             'text-center',
-//             'text-3xl',
-//             'text-firstColor',
-//           )
-
-//           $div.classList.add(
-//             'relative',
-//             'w-full',
-//             'max-w-4xl',
-//             'overflow-auto',
-//             'rounded',
-//             'mb-8',
-//           )
-
-//           $table.classList.add('w-full', 'max-w-4xl')
-//           $thead.classList.add('bg-firstColor')
-//           $trh.classList.add('text-white')
-
-//           const columns = `
-//             <th
-//               class="border-b-8 border-back p-4 text-base font-bold tracking-wide"
-//             >
-//               Código
-//             </th>
-//             <th
-//               class="border-b-8 border-back px-4 text-left font-bold tracking-wide"
-//             >
-//               Materia
-//             </th>
-//             <th
-//               class="border-b-8 border-back p-4 text-base font-bold tracking-wide"
-//             >
-//               Dictado
-//             </th>
-//             <th
-//               class="border-b-8 border-back p-4 text-base font-bold tracking-wide"
-//             >
-//               Correlativas
-//             </th>
-//             <th
-//               class="min-w-32 border-b-8 border-back p-4 text-base font-bold tracking-wide"
-//             >
-//               Estado
-//             </th>
-//           `
-
-//           $trh.innerHTML = columns
-//           $thead.appendChild($trh)
-
-//           $tbody.classList.add('text-black')
-
-//           course.materias.forEach((materia, index) => {
-//             const $trb = d.createElement('tr')
-
-//             let tdata = ``,
-//               clasess =
-//                 'rounded-full px-3 py-0.5 tracking-wide text-black hover:cursor-pointer',
-//               correlativas = '-'
-
-//             if (materia.correlativas.length != 0)
-//               correlativas = materia.correlativas.join(' - ')
-
-//             $trb.classList.add(
-//               `${index % 2 ? 'bg-thirdColor' : 'bg-secondColor'}`,
-//               'hover:bg-hoverColor',
-//             )
-
-//             if (materia.estado === null) {
-//               clasess = ''
-//             }
-
-//             if (materia.estado === 'Aprobada') {
-//               clasess += ' bg-green-300'
-//             }
-
-//             if (materia.estado === 'Cursando') {
-//               clasess += ' bg-blue-300'
-//             }
-
-//             if (materia.estado === 'Recursar') {
-//               clasess += ' bg-orange-300'
-//             }
-
-//             if (materia.estado === 'Regular') {
-//               clasess += ' bg-violet-300'
-//             }
-
-//             if (course.materias.length - 1 === index) {
-//               tdata = `
-//                 <td class="p-2 text-center">${materia.codigo}</td>
-//                 <td class="border-l-4 border-back p-2">
-//                   ${materia.nombreMateria}
-//                 </td>
-//                 <td class="border-l-4 border-back p-2 text-center">
-//                   ${materia.dictado}
-//                 </td>
-//                 <td class="border-l-4 border-back p-2 text-center">${correlativas}</td>
-//                 <td class="border-l-4 border-back p-2 text-center">
-//                   <span
-//                     class="${clasess}"
-//                     >${materia.estado === null ? '-' : materia.estado}</span
-//                   >
-//                 </td>
-//               `
-//             } else {
-//               tdata = `
-//                 <td class="border-b-4 border-back py-2 text-center">${materia.codigo}</td>
-//                 <td class="border-b-4 border-l-4 border-back p-2">
-//                   ${materia.nombreMateria}
-//                 </td>
-//                 <td class="border-b-4 border-l-4 border-back p-2 text-center">
-//                   ${materia.dictado}
-//                 </td>
-//                 <td class="border-b-4 border-l-4 border-back p-2 text-center">
-//                   ${correlativas}
-//                 </td>
-//                 <td class="border-b-4 border-l-4 border-back p-2 text-center">
-//                   <span
-//                     class="${clasess}"
-//                     >${materia.estado === null ? '-' : materia.estado}</span
-//                   >
-//                 </td>
-//               `
-//             }
-
-//             $trb.innerHTML = tdata
-//             $tbody.appendChild($trb)
-//           })
-
-//           $fragment.appendChild($h2)
-//           $table.append($thead, $tbody)
-//           $div.appendChild($table)
-//           $fragment.appendChild($div)
-//         })
-
-//         $article[0].appendChild($fragment)
-//       })
-//     })
-//     .catch((err) => {
-//       let message = err.statusText || 'Ocurrio un error'
-//       console.log(message)
-//     })
-// })
-
-d.addEventListener('click', (e) => {
-  if (e.target.matches('span')) {
-    if (e.target.dataset.id) {
-      if ($menuSelect != null) {
-        quitarMenu()
-      } else {
-        $menuSelect = d
-          .getElementById(`${e.target.dataset.id}`)
-          .parentNode.querySelector('ul')
-
-        mostrarMenu()
+    if (!res.ok)
+      throw {
+        status: res.status,
+        statusText: res.statusText,
       }
-    }
-  }
 
-  if (!e.target.matches('span') && $menuSelect != null) {
-    quitarMenu()
+    const $fragment = d.createDocumentFragment(),
+      $article = d.getElementsByTagName('article')
+
+    const $titleCareer = d.getElementById('titleCareer'),
+      $careerDuration = d.getElementById('careerDuration')
+
+    $titleCareer.textContent = career.nombreCarrera
+    $careerDuration.textContent = `DURACIÓN: ${career.duracionCarrera} AÑOS`
+
+    if (career.hasOwnProperty('tituloIntermedio')) {
+      const $subCareer = d.getElementById('subCareer'),
+        $subCareerDuration = d.getElementById('subCareerDuration')
+
+      $subCareer.textContent = `${career.tituloIntermedio}`
+      $subCareerDuration.textContent = `DURACIÓN: ${career.duracionDelTituloIntermedio} AÑOS`
+    }
+
+    career.listaDeMateriasPorAnio.forEach((el) => {
+      const $templateTableInfo = d.getElementById('template-table'),
+        $cloneTemplateTableInfo = $templateTableInfo.cloneNode(true).content
+
+      $cloneTemplateTableInfo.querySelector('h2').textContent = el.anio
+
+      el.materias.forEach((subject, index) => {
+        const $templateTr = d.getElementById('tr-template'),
+          $cloneTemplateTr = $templateTr.cloneNode(true).content
+
+        $cloneTemplateTr
+          .querySelector('tr')
+          .classList.add(`${index % 2 ? 'bg-thirdColor' : 'bg-secondColor'}`)
+
+        const $allTd = $cloneTemplateTr.querySelectorAll('td')
+
+        $allTd[0].textContent = subject.codigo
+        $allTd[1].textContent = subject.nombreMateria
+        $allTd[2].textContent = subject.dictado
+
+        if (subject.estado !== null) {
+          $allTd[4].textContent = subject.estado
+        }
+
+        if (subject.correlativas.length != 0)
+          $allTd[3].textContent = subject.correlativas.join(' - ')
+
+        if (el.materias.length - 1 === index) {
+          $allTd[0].classList.remove('py-2')
+          $allTd[0].classList.add('p-2')
+        }
+
+        $cloneTemplateTableInfo
+          .querySelector('tbody')
+          .appendChild($cloneTemplateTr)
+      })
+
+      $fragment.appendChild($cloneTemplateTableInfo)
+    })
+
+    $article[0].appendChild($fragment)
+  } catch (err) {
+    let message = err.statusText || 'Ocurrió un error'
+    console.log(`Error ${err.status}: ${message}`)
   }
+}
+
+d.addEventListener('DOMContentLoaded', () => {
+  loadInformationCareer()
 })
+
+// d.addEventListener('click', (e) => {
+//   if (e.target.matches('span')) {
+//     if (e.target.dataset.id) {
+//       if ($menuSelect != null) {
+//         quitarMenu()
+//       } else {
+//         $menuSelect = d
+//           .getElementById(`${e.target.dataset.id}`)
+//           .parentNode.querySelector('ul')
+
+//         mostrarMenu()
+//       }
+//     } else {
+//       console.log(e.target.dataset.state)
+//     }
+//   }
+
+//   if (!e.target.matches('span') && $menuSelect != null) {
+//     quitarMenu()
+//   }
+// })

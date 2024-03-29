@@ -39,127 +39,58 @@
       >
         Plan de Estudios
       </h2>
-      <article class="flex flex-col items-center">
-        <table class="w-full max-w-4xl">
-          <thead class="bg-firstColor">
-            <tr class="text-white">
-              <th
-                class="border-b-8 border-back p-4 text-base font-bold tracking-wide"
-              >
-                Código
-              </th>
-              <th
-                class="border-b-8 border-back px-4 text-left font-bold tracking-wide"
-              >
-                Materia
-              </th>
-              <th
-                class="border-b-8 border-back p-4 text-base font-bold tracking-wide"
-              >
-                Dictado
-              </th>
-              <th
-                class="border-b-8 border-back p-4 text-base font-bold tracking-wide"
-              >
-                Correlativas
-              </th>
-              <th
-                class="min-w-32 border-b-8 border-back p-4 text-base font-bold tracking-wide"
-              >
-                Estado
-              </th>
-            </tr>
-          </thead>
-          <tbody class="text-black">
-            <tr class="bg-thirdColor hover:bg-secondColor">
-              <td class="border-b-4 border-back py-2 text-center">07034</td>
-              <td class="border-b-4 border-l-4 border-back p-2">
-                Programación con Objetos II
-              </td>
-              <td class="border-b-4 border-l-4 border-back p-2 text-center">
-                1°C
-              </td>
-              <td class="border-b-4 border-l-4 border-back p-2 text-center">
-                07033
-              </td>
-              <td class="border-b-4 border-l-4 border-back p-2 text-center">
-                <div class="relative flex justify-center">
-                  <span
-                    class="inline-block w-28 rounded-full border border-solid border-white bg-aprobadaColorFondo py-0.5 font-light tracking-wide text-aprobadaColor transition hover:scale-105 hover:cursor-pointer"
-                    data-state="Aprobada"
-                    data-id="07034"
-                    id="07034"
-                    >Aprobada</span
-                  >
-                  <ul
-                    class="align-center invisible absolute top-9 z-10 flex w-32 list-none flex-col items-center gap-1 rounded-md border border-solid border-white bg-thirdColor px-4 py-2 opacity-0 shadow-lg"
-                  >
-                    <li>
-                      <span
-                        class="block w-28 rounded-full border border-solid bg-cursandoColorFondo px-3 py-0.5 font-light tracking-wide text-cursandoColor transition-transform hover:scale-105 hover:cursor-pointer"
-                        data-estado="Cursando"
-                        >Cursando</span
-                      >
-                    </li>
-                    <li>
-                      <span
-                        class="block w-28 rounded-full border border-solid bg-recursarColorFondo px-3 py-0.5 font-light tracking-wide text-recursarColor transition-transform hover:scale-105 hover:cursor-pointer"
-                        data-estado="Recursar"
-                        >Recursar</span
-                      >
-                    </li>
-                    <li>
-                      <span
-                        class="block w-28 rounded-full border border-solid bg-regularColorFondo px-3 py-0.5 font-light tracking-wide text-regularColor transition-transform hover:scale-105 hover:cursor-pointer"
-                        data-estado="Regular"
-                        >Regular</span
-                      >
-                    </li>
-                  </ul>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </article>
-      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+      <article class="flex flex-col items-center"></article>
     </main>
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+    <template id="template-table">
+      <h2 class="mb-4 text-center text-3xl text-firstColor"></h2>
+      <table class="w-full max-w-4xl">
+        <thead class="bg-firstColor">
+          <tr class="text-white">
+            <th
+              class="rounded-tl border-b-8 border-back p-4 text-base font-bold tracking-wide"
+            >
+              Código
+            </th>
+            <th
+              class="border-b-8 border-back px-4 text-left font-bold tracking-wide"
+            >
+              Materia
+            </th>
+            <th
+              class="border-b-8 border-back p-4 text-base font-bold tracking-wide"
+            >
+              Dictado
+            </th>
+            <th
+              class="border-b-8 border-back p-4 text-base font-bold tracking-wide"
+            >
+              Correlativas
+            </th>
+            <th
+              class="min-w-32 rounded-tr border-b-8 border-back p-4 text-base font-bold tracking-wide"
+            >
+              Estado
+            </th>
+          </tr>
+        </thead>
+        <tbody class="text-black"></tbody>
+      </table>
+    </template>
+
+    <template id="tr-template">
+      <tr class="hover:bg-hoverColor">
+        <td class="w-24 border-b-4 border-back py-2 text-center"></td>
+        <td class="w-[400px] border-b-4 border-l-4 border-back p-2"></td>
+        <td class="w-24 border-b-4 border-l-4 border-back p-2 text-center"></td>
+        <td class="w-40 border-b-4 border-l-4 border-back p-2 text-center">
+          -
+        </td>
+        <td class="border-b-4 border-l-4 border-back p-2 text-center">-</td>
+      </tr>
+    </template>
     <script src="js/scripts.js"></script>
   </body>
 </html>
-
-<!-- <div class="relative m-auto w-28">
-  <div
-    class="mb-1 flex cursor-pointer items-center justify-between rounded-md bg-slate-600 px-3 py-2.5 text-white hover:bg-slate-500"
-    id="menuEstado"
-  >
-    <span></span>
-    <div
-      class="h-0 w-0 border-x-4 border-t-8 border-white border-x-transparent transition-transform"
-    ></div>
-  </div>
-  <ul
-    class="duration-3000 absolute left-1/2 top-8 z-10 hidden w-full -translate-x-1/2 list-none rounded-md border border-solid border-slate-700 bg-slate-600 px-1 py-2 text-white opacity-0 transition-opacity ease-in"
-  >
-    <li
-      class="my-1 cursor-pointer px-1 py-[0.3] hover:bg-slate-500"
-    >
-      Aprobada
-    </li>
-    <li
-      class="my-1 cursor-pointer px-1 py-[0.3] hover:bg-slate-500"
-    >
-      Cursando
-    </li>
-    <li
-      class="my-1 cursor-pointer px-1 py-[0.3] hover:bg-slate-500"
-    >
-      Regular
-    </li>
-    <li
-      class="my-1 cursor-pointer px-1 py-[0.3] hover:bg-slate-500"
-    >
-      Recursar
-    </li>
-  </ul>
-</div> -->

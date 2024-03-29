@@ -1,0 +1,69 @@
+<table class="w-full max-w-4xl">
+  <thead class="bg-firstColor">
+    <tr class="text-white">
+      <th class="border-b-8 border-back p-4 text-base font-bold tracking-wide">
+        Código
+      </th>
+      <th class="border-b-8 border-back px-4 text-left font-bold tracking-wide">
+        Materia
+      </th>
+      <th class="border-b-8 border-back p-4 text-base font-bold tracking-wide">
+        Dictado
+      </th>
+      <th class="border-b-8 border-back p-4 text-base font-bold tracking-wide">
+        Correlativas
+      </th>
+      <th
+        class="min-w-32 border-b-8 border-back p-4 text-base font-bold tracking-wide"
+      >
+        Estado
+      </th>
+    </tr>
+  </thead>
+  <tbody class="text-black">
+    <tr class="bg-thirdColor hover:bg-secondColor">
+      <td class="border-b-4 border-back py-2 text-center">07034</td>
+      <td class="border-b-4 border-l-4 border-back p-2">
+        Programación con Objetos II
+      </td>
+      <td class="border-b-4 border-l-4 border-back p-2 text-center">1°C</td>
+      <td class="border-b-4 border-l-4 border-back p-2 text-center">07033</td>
+      <td class="border-b-4 border-l-4 border-back p-2 text-center">
+        <div class="relative flex justify-center">
+          <span
+            class="inline-block w-28 rounded-full border border-solid border-white bg-aprobadaColorFondo py-0.5 font-light tracking-wide text-aprobadaColor transition hover:scale-105 hover:cursor-pointer"
+            data-state="Aprobada"
+            data-id="07034"
+            id="07034"
+            >Aprobada</span
+          >
+          <ul
+            class="align-center invisible absolute top-9 z-10 flex w-32 list-none flex-col items-center gap-1 rounded-md border border-solid border-white bg-thirdColor px-4 py-2 opacity-0 shadow-lg"
+          >
+            <li>
+              <span
+                class="block w-28 rounded-full border border-solid bg-cursandoColorFondo px-3 py-0.5 font-light tracking-wide text-cursandoColor transition-transform hover:scale-105 hover:cursor-pointer"
+                data-state="Cursando"
+                >Cursando</span
+              >
+            </li>
+            <li>
+              <span
+                class="block w-28 rounded-full border border-solid bg-recursarColorFondo px-3 py-0.5 font-light tracking-wide text-recursarColor transition-transform hover:scale-105 hover:cursor-pointer"
+                data-state="Recursar"
+                >Recursar</span
+              >
+            </li>
+            <li>
+              <span
+                class="block w-28 rounded-full border border-solid bg-regularColorFondo px-3 py-0.5 font-light tracking-wide text-regularColor transition-transform hover:scale-105 hover:cursor-pointer"
+                data-state="Regular"
+                >Regular</span
+              >
+            </li>
+          </ul>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
