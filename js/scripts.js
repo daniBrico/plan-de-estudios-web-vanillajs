@@ -49,6 +49,9 @@ const loadInformationCareer = async function () {
       const $templateTableInfo = d.getElementById('template-table'),
         $cloneTemplateTableInfo = $templateTableInfo.cloneNode(true).content
 
+      $cloneTemplateTableInfo.querySelector('th').textContent +=
+        ` (${el.materias.length})`
+
       $cloneTemplateTableInfo.querySelector('h2').textContent = el.anio
 
       el.materias.forEach((subject, index) => {
@@ -112,12 +115,14 @@ const loadInformationCareer = async function () {
             option.classList.add('bg-[#23242a]')
 
             openCloseMenu($select, $caret, $menu)
+            $dropdownOpen = null
           })
         })
 
         if (el.materias.length - 1 === index) {
-          $allTd[0].classList.remove('py-2')
-          $allTd[0].classList.add('p-2')
+          $allTd.forEach((td) => {
+            td.classList.remove('border-b-4')
+          })
         }
 
         $cloneTemplateTableInfo
@@ -157,4 +162,15 @@ d.addEventListener('DOMContentLoaded', () => {
   loadInformationCareer()
 })
 
-d.addEventListener('click', (e) => {})
+d.addEventListener('click', (e) => {
+  if (!e.target.hasAttribute('data-drop-menu')) {
+    if ($dropdownOpen !== null) {
+      openCloseMenu(
+        $dropdownOpen.$select,
+        $dropdownOpen.$caret,
+        $dropdownOpen.$menu,
+      )
+      $dropdownOpen = null
+    }
+  }
+})

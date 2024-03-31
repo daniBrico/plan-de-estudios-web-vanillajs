@@ -45,32 +45,32 @@
     <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
     <template id="template-table">
-      <h2 class="mb-4 text-center text-3xl text-firstColor"></h2>
+      <h2 class="my-4 text-center text-3xl text-firstColor"></h2>
       <table class="w-full max-w-4xl">
         <thead class="bg-firstColor">
           <tr class="text-white">
             <th
-              class="rounded-tl border-b-8 border-back p-4 text-base font-bold tracking-wide"
+              class="rounded-tl border-b-8 border-back p-2 font-bold tracking-wide"
             >
               Código
             </th>
             <th
-              class="border-b-8 border-back px-4 text-left font-bold tracking-wide"
+              class="border-b-8 border-back p-2 text-left font-bold tracking-wide"
             >
               Materia
             </th>
             <th
-              class="border-b-8 border-back p-4 text-base font-bold tracking-wide"
+              class="border-b-8 border-back p-2 text-base font-bold tracking-wide"
             >
               Dictado
             </th>
             <th
-              class="border-b-8 border-back p-4 text-base font-bold tracking-wide"
+              class="border-b-8 border-back p-2 text-base font-bold tracking-wide"
             >
               Correlativas
             </th>
             <th
-              class="min-w-32 rounded-tr border-b-8 border-back p-4 text-base font-bold tracking-wide"
+              class="min-w-32 rounded-tr border-b-8 border-back p-2 text-base font-bold tracking-wide"
             >
               Estado
             </th>
@@ -82,47 +82,55 @@
 
     <template id="tr-template">
       <tr class="hover:bg-hoverColor">
-        <td class="w-24 border-b-4 border-back py-2 text-center"></td>
+        <td class="w-28 border-b-4 border-back text-center"></td>
         <td class="w-[400px] border-b-4 border-l-4 border-back p-2"></td>
         <td class="w-24 border-b-4 border-l-4 border-back p-2 text-center"></td>
         <td class="w-40 border-b-4 border-l-4 border-back p-2 text-center">
           -
         </td>
         <td class="border-b-4 border-l-4 border-back p-2 text-center">
-          <div class="relative min-w-28">
+          <div class="relative min-w-28" data-drop-menu="dropdown">
             <div
-              class="z-10 flex min-h-8 cursor-pointer items-center justify-between rounded border-2 border-solid border-[#2a2f3b] bg-[#2a2f3b] px-3 py-0.5 text-white transition duration-300 hover:bg-[#323741]"
+              class="z-10 flex min-h-8 cursor-pointer items-center justify-between rounded border-2 border-solid border-[#2a2f3b] bg-[#2a2f3b] px-3 text-white transition duration-300 hover:bg-[#323741]"
+              data-drop-menu="select"
             >
-              <span></span>
+              <span data-drop-menu="selected"></span>
               <div
                 class="h-0 w-0 border-l-[5px] border-r-[5px] border-t-[6px] border-l-transparent border-r-transparent border-t-white transition duration-300"
+                data-drop-menu="caret"
               ></div>
             </div>
             <ul
               class="invisible absolute left-1/2 top-9 z-10 w-full -translate-x-1/2 rounded-md border border-solid border-[#363a43] bg-[#323741] px-2 py-2 text-[#9fa5b5] opacity-0 shadow-lg transition duration-300"
+              data-drop-menu="menu"
             >
               <li
                 class="cursor-pointer rounded-md px-0.5 py-1 hover:bg-[#2a2d35]"
+                data-drop-menu="option"
               >
                 Aprobada
               </li>
               <li
                 class="cursor-pointer rounded-md px-0.5 py-1 hover:bg-[#2a2d35]"
+                data-drop-menu="option"
               >
                 Cursando
               </li>
               <li
                 class="cursor-pointer rounded-md px-0.5 py-1 hover:bg-[#2a2d35]"
+                data-drop-menu="option"
               >
                 Regular
               </li>
               <li
                 class="cursor-pointer rounded-md px-0.5 py-1 hover:bg-[#2a2d35]"
+                data-drop-menu="option"
               >
                 Recursar
               </li>
               <li
                 class="cursor-pointer rounded-md px-0.5 py-1 hover:bg-[#2a2d35]"
+                data-drop-menu="option"
               >
                 Quitar
               </li>
