@@ -1,20 +1,18 @@
+// Variables
 const d = document
 
-let $menuSelect = null
+let $dropdownOpen = null
 
-const mostrarMenu = function () {
-  if ($menuSelect.classList.contains('invisible')) {
-    $menuSelect.classList.remove('invisible', 'opacity-0')
-  }
+// Funciones
+const openCloseMenu = function ($select, $caret, $menu) {
+  $select.classList.toggle('shadow-shadowSelect')
+  $select.classList.toggle('border-[#2a2f3b]')
+  $select.classList.toggle('border-[#26489a]')
 
-  $menuSelect.classList.add('mostrar')
-  $menuSelect.classList.remove('quitar')
-}
+  $caret.classList.toggle('rotate-180')
 
-const quitarMenu = function () {
-  $menuSelect.classList.remove('mostrar')
-  $menuSelect.classList.add('quitar')
-  $menuSelect = null
+  $menu.classList.toggle('opacity-0')
+  $menu.classList.toggle('invisible')
 }
 
 const loadInformationCareer = async function () {
@@ -67,12 +65,55 @@ const loadInformationCareer = async function () {
         $allTd[1].textContent = subject.nombreMateria
         $allTd[2].textContent = subject.dictado
 
-        if (subject.estado !== null) {
-          $allTd[4].textContent = subject.estado
-        }
-
         if (subject.correlativas.length != 0)
           $allTd[3].textContent = subject.correlativas.join(' - ')
+
+        const $select = $allTd[4].querySelector('div > div'),
+          $caret = $select.querySelector('div'),
+          $menu = $allTd[4].querySelector('ul')
+
+        $select.id = `select-${subject.codigo}`
+
+        $select.addEventListener('click', () => {
+          if ($dropdownOpen !== null) {
+            if ($select === $dropdownOpen.$select) {
+              openCloseMenu($select, $caret, $menu)
+              $dropdownOpen = null
+              return
+            }
+
+            openCloseMenu(
+              $dropdownOpen.$select,
+              $dropdownOpen.$caret,
+              $dropdownOpen.$menu,
+            )
+          }
+
+          $dropdownOpen = {
+            $select,
+            $caret,
+            $menu,
+          }
+
+          openCloseMenu($select, $caret, $menu)
+        })
+
+        const $options = $allTd[4].querySelectorAll('ul > li'),
+          $selected = $allTd[4].querySelector('span')
+
+        $options.forEach((option) => {
+          option.addEventListener('click', () => {
+            $selected.innerText = option.innerText
+
+            $options.forEach((option) => {
+              option.classList.remove('bg-[#23242a]')
+            })
+
+            option.classList.add('bg-[#23242a]')
+
+            openCloseMenu($select, $caret, $menu)
+          })
+        })
 
         if (el.materias.length - 1 === index) {
           $allTd[0].classList.remove('py-2')
@@ -94,28 +135,26 @@ const loadInformationCareer = async function () {
   }
 }
 
+const getStateOfSubjects = async function () {
+  try {
+    let res = await fetch('../data/plan-de-estudios.json'),
+      data = await res.json()
+
+    if (!res.ok)
+      throw {
+        status: res.status,
+        statusText: res.statusText,
+      }
+
+    return data[0].listaDeMateriasPorAnio
+  } catch (err) {
+    let message = err.statusText || 'Ocurrió un error'
+    console.log(`Error ${err.status}: ${message}`)
+  }
+}
+
 d.addEventListener('DOMContentLoaded', () => {
   loadInformationCareer()
 })
 
-// d.addEventListener('click', (e) => {
-//   if (e.target.matches('span')) {
-//     if (e.target.dataset.id) {
-//       if ($menuSelect != null) {
-//         quitarMenu()
-//       } else {
-//         $menuSelect = d
-//           .getElementById(`${e.target.dataset.id}`)
-//           .parentNode.querySelector('ul')
-
-//         mostrarMenu()
-//       }
-//     } else {
-//       console.log(e.target.dataset.state)
-//     }
-//   }
-
-//   if (!e.target.matches('span') && $menuSelect != null) {
-//     quitarMenu()
-//   }
-// })
+d.addEventListener('click', (e) => {})

@@ -24,6 +24,9 @@ module.exports = {
         regularColor: '#401F71',
         regularColorFondo: '#7d27ff81',
       },
+      boxShadow: {
+        shadowSelect: '0 0 0.8em #26489a',
+      },
     },
   },
   plugins: [],

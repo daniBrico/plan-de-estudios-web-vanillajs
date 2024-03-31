@@ -18,48 +18,11 @@ body {
   @apply font-onest;
 }
 
-@keyframes mostrarElemento {
-  0% {
-    opacity: 0;
-    transform: translateY(-100%);
-    visibility: hidden;
-  }
-  50% {
-    opacity: 0;
-    transform: translateY(-50%);
-    visibility: hidden;
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-    visibility: visible;
-  }
-}
-
-@keyframes quitarElemento {
-  0% {
-    opacity: 1;
-    transform: translateY(0);
-    visibility: visible;
-  }
-  50% {
-    opacity: 0.3;
-    transform: translateY(-5%);
-  }
-  70% {
-    visibility: hidden;
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(-100%);
-    visibility: hidden;
-  }
-}
-
-.mostrar {
-  animation: mostrarElemento 0.2s ease-in-out forwards;
-}
-
-.quitar {
-  animation: quitarElemento 0.2s ease-in-out forwards;
+.glass {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  backdrop-filter: blur(10px);
 }

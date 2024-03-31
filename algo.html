@@ -1,7 +1,9 @@
 <table class="w-full max-w-4xl">
   <thead class="bg-firstColor">
     <tr class="text-white">
-      <th class="border-b-8 border-back p-4 text-base font-bold tracking-wide">
+      <th
+        class="rounded-tl border-b-8 border-back p-4 text-base font-bold tracking-wide"
+      >
         Código
       </th>
       <th class="border-b-8 border-back px-4 text-left font-bold tracking-wide">
@@ -14,52 +16,52 @@
         Correlativas
       </th>
       <th
-        class="min-w-32 border-b-8 border-back p-4 text-base font-bold tracking-wide"
+        class="min-w-32 rounded-tr border-b-8 border-back p-4 text-base font-bold tracking-wide"
       >
         Estado
       </th>
     </tr>
   </thead>
   <tbody class="text-black">
-    <tr class="bg-thirdColor hover:bg-secondColor">
-      <td class="border-b-4 border-back py-2 text-center">07034</td>
-      <td class="border-b-4 border-l-4 border-back p-2">
-        Programación con Objetos II
+    <tr class="bg-secondColor hover:bg-hoverColor">
+      <td class="w-24 border-b-4 border-back py-2 text-center">07071</td>
+      <td class="w-[400px] border-b-4 border-l-4 border-back p-2">
+        Tecnología Aplicada
       </td>
-      <td class="border-b-4 border-l-4 border-back p-2 text-center">1°C</td>
-      <td class="border-b-4 border-l-4 border-back p-2 text-center">07033</td>
+      <td class="w-24 border-b-4 border-l-4 border-back p-2 text-center">
+        1°C
+      </td>
+      <td class="w-40 border-b-4 border-l-4 border-back p-2 text-center">-</td>
       <td class="border-b-4 border-l-4 border-back p-2 text-center">
-        <div class="relative flex justify-center">
-          <span
-            class="inline-block w-28 rounded-full border border-solid border-white bg-aprobadaColorFondo py-0.5 font-light tracking-wide text-aprobadaColor transition hover:scale-105 hover:cursor-pointer"
-            data-state="Aprobada"
-            data-id="07034"
-            id="07034"
-            >Aprobada</span
+        <div class="relative min-w-28" id="dropdown">
+          <div
+            class="flex cursor-pointer items-center justify-around rounded border-2 border-solid border-[#2a2f3b] bg-[#2a2f3b] py-0.5 text-white transition duration-300 hover:bg-[#323741]"
+            id="select"
           >
+            <span class="selected">Aprobada</span>
+            <div
+              class="h-0 w-0 border-l-[5px] border-r-[5px] border-t-[6px] border-l-transparent border-r-transparent border-t-white transition"
+              id="caret"
+            ></div>
+          </div>
           <ul
-            class="align-center invisible absolute top-9 z-10 flex w-32 list-none flex-col items-center gap-1 rounded-md border border-solid border-white bg-thirdColor px-4 py-2 opacity-0 shadow-lg"
+            class="z-1 invisible absolute left-1/2 top-9 w-full -translate-x-1/2 rounded-md border border-solid border-[#363a43] bg-[#323741] px-2 py-2 text-[#9fa5b5] opacity-0 shadow-lg transition"
+            id="menu"
           >
-            <li>
-              <span
-                class="block w-28 rounded-full border border-solid bg-cursandoColorFondo px-3 py-0.5 font-light tracking-wide text-cursandoColor transition-transform hover:scale-105 hover:cursor-pointer"
-                data-state="Cursando"
-                >Cursando</span
-              >
+            <li
+              class="cursor-pointer rounded-md px-0.5 py-1 hover:bg-[#2a2d35]"
+            >
+              Cursando
             </li>
-            <li>
-              <span
-                class="block w-28 rounded-full border border-solid bg-recursarColorFondo px-3 py-0.5 font-light tracking-wide text-recursarColor transition-transform hover:scale-105 hover:cursor-pointer"
-                data-state="Recursar"
-                >Recursar</span
-              >
+            <li
+              class="cursor-pointer rounded-md px-0.5 py-1 hover:bg-[#2a2d35]"
+            >
+              Regular
             </li>
-            <li>
-              <span
-                class="block w-28 rounded-full border border-solid bg-regularColorFondo px-3 py-0.5 font-light tracking-wide text-regularColor transition-transform hover:scale-105 hover:cursor-pointer"
-                data-state="Regular"
-                >Regular</span
-              >
+            <li
+              class="cursor-pointer rounded-md px-0.5 py-1 hover:bg-[#2a2d35]"
+            >
+              Recursar
             </li>
           </ul>
         </div>
