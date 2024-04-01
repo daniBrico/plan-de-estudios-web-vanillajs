@@ -26,6 +26,7 @@ module.exports = {
       },
       boxShadow: {
         shadowSelect: '0 0 0.8em #26489a',
+        shadowBox: '0 0 0.8em #dddde0',
       },
     },
   },

@@ -33,44 +33,44 @@
         </div>
       </div>
     </header>
-    <main class="m-auto">
-      <h2
-        class="mx-auto mb-5 mt-6 text-center text-4xl font-semibold text-black"
-      >
+    <main class="">
+      <h2 class="mx-auto mt-6 text-center text-4xl font-semibold text-black">
         Plan de Estudios
       </h2>
-      <article class="flex flex-col items-center"></article>
+      <article
+        class="px-4 lg:flex lg:flex-col lg:items-center lg:px-0"
+      ></article>
     </main>
 
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-
     <template id="template-table">
-      <h2 class="my-4 text-center text-3xl text-firstColor"></h2>
-      <table class="w-full max-w-4xl">
+      <h2
+        class="mb-2 mt-4 hidden text-center text-3xl text-firstColor md:block"
+      ></h2>
+      <table class="mx-auto mb-2 hidden shadow-shadowBox md:block">
         <thead class="bg-firstColor">
           <tr class="text-white">
             <th
-              class="rounded-tl border-b-8 border-back p-2 font-bold tracking-wide"
+              class="w-28 whitespace-nowrap rounded-tl-lg border-b-2 border-back p-2 text-base font-bold tracking-wide"
             >
               Código
             </th>
             <th
-              class="border-b-8 border-back p-2 text-left font-bold tracking-wide"
+              class="w-[400px] whitespace-nowrap border-b-2 border-back p-2 text-left text-base font-bold tracking-wide"
             >
               Materia
             </th>
             <th
-              class="border-b-8 border-back p-2 text-base font-bold tracking-wide"
+              class="w-20 border-b-2 border-back p-2 text-base font-bold tracking-wide"
             >
               Dictado
             </th>
             <th
-              class="border-b-8 border-back p-2 text-base font-bold tracking-wide"
+              class="w-36 border-b-2 border-back p-2 text-base font-bold tracking-wide"
             >
               Correlativas
             </th>
             <th
-              class="min-w-32 rounded-tr border-b-8 border-back p-2 text-base font-bold tracking-wide"
+              class="max-w-32 rounded-tr-lg border-b-2 border-back p-2 text-base font-bold tracking-wide"
             >
               Estado
             </th>
@@ -82,19 +82,21 @@
 
     <template id="tr-template">
       <tr class="hover:bg-hoverColor">
-        <td class="w-28 border-b-4 border-back text-center"></td>
-        <td class="w-[400px] border-b-4 border-l-4 border-back p-2"></td>
-        <td class="w-24 border-b-4 border-l-4 border-back p-2 text-center"></td>
-        <td class="w-40 border-b-4 border-l-4 border-back p-2 text-center">
+        <td class="font- border-b-2 border-back text-center text-base"></td>
+        <td class="border-b-2 border-l-2 border-back px-2 text-base"></td>
+        <td
+          class="border-b-2 border-l-2 border-back text-center text-base"
+        ></td>
+        <td class="border-b-2 border-l-2 border-back text-center text-base">
           -
         </td>
-        <td class="border-b-4 border-l-4 border-back p-2 text-center">
+        <td class="border-b-2 border-l-2 border-back p-2 text-center text-base">
           <div class="relative min-w-28" data-drop-menu="dropdown">
             <div
-              class="z-10 flex min-h-8 cursor-pointer items-center justify-between rounded border-2 border-solid border-[#2a2f3b] bg-[#2a2f3b] px-3 text-white transition duration-300 hover:bg-[#323741]"
+              class="z-10 flex min-h-8 cursor-pointer items-center justify-between rounded border-2 border-solid border-[#2a2f3b] bg-[#2a2f3b] px-2 text-white transition duration-300 hover:bg-[#323741]"
               data-drop-menu="select"
             >
-              <span data-drop-menu="selected"></span>
+              <span data-drop-menu="selected" data-option=""></span>
               <div
                 class="h-0 w-0 border-l-[5px] border-r-[5px] border-t-[6px] border-l-transparent border-r-transparent border-t-white transition duration-300"
                 data-drop-menu="caret"
@@ -107,30 +109,35 @@
               <li
                 class="cursor-pointer rounded-md px-0.5 py-1 hover:bg-[#2a2d35]"
                 data-drop-menu="option"
+                data-option="Aprobada"
               >
                 Aprobada
               </li>
               <li
                 class="cursor-pointer rounded-md px-0.5 py-1 hover:bg-[#2a2d35]"
                 data-drop-menu="option"
+                data-option="Cursando"
               >
                 Cursando
               </li>
               <li
                 class="cursor-pointer rounded-md px-0.5 py-1 hover:bg-[#2a2d35]"
                 data-drop-menu="option"
+                data-option="Regular"
               >
                 Regular
               </li>
               <li
                 class="cursor-pointer rounded-md px-0.5 py-1 hover:bg-[#2a2d35]"
                 data-drop-menu="option"
+                data-option="Recursar"
               >
                 Recursar
               </li>
               <li
                 class="cursor-pointer rounded-md px-0.5 py-1 hover:bg-[#2a2d35]"
                 data-drop-menu="option"
+                data-option=""
               >
                 Quitar
               </li>
@@ -138,6 +145,98 @@
           </div>
         </td>
       </tr>
+    </template>
+
+    <template id="design-small-template">
+      <h2 class="my-4 text-center text-3xl text-firstColor md:hidden">
+        Primer Año
+      </h2>
+      <div class="grid grid-cols-1 gap-1 sm:grid-cols-2 md:hidden">
+        <div
+          class="flex justify-between gap-0 rounded-md bg-secondColor p-1.5 shadow-shadowBox"
+        >
+          <div class="flex justify-between">
+            <div class="flex flex-col justify-between gap-4">
+              <div class="">
+                <div class="border-b-2 border-b-back">
+                  <p
+                    class="text-pretty text-sm font-bold"
+                    data-nombre-materia=""
+                  >
+                    Programación con Objetos III
+                  </p>
+                </div>
+                <div class="mt-1">
+                  <p class="text-sm font-semibold" data-codigo-materia="">
+                    07048
+                  </p>
+                </div>
+              </div>
+
+              <div data-correlativas="">
+                <p class="text-sm font-light">07039 - 07034 - 07017</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col justify-between pb-1">
+            <div class="self-end font-light" data-dictado="">
+              <p class="text-sm">2°C</p>
+            </div>
+            <div class="relative min-w-28" data-drop-menu="dropdown">
+              <div
+                class="z-10 flex min-h-8 cursor-pointer items-center justify-between rounded border-2 border-solid border-[#2a2f3b] bg-[#2a2f3b] px-2 text-white transition duration-300 hover:bg-[#323741]"
+                data-drop-menu="select"
+              >
+                <span data-drop-menu="selected" data-option=""></span>
+                <div
+                  class="h-0 w-0 border-l-[5px] border-r-[5px] border-t-[6px] border-l-transparent border-r-transparent border-t-white transition duration-300"
+                  data-drop-menu="caret"
+                ></div>
+              </div>
+              <ul
+                class="invisible absolute left-1/2 top-9 z-10 w-full -translate-x-1/2 rounded-md border border-solid border-[#363a43] bg-[#323741] px-2 py-2 text-[#9fa5b5] opacity-0 shadow-lg transition duration-300"
+                data-drop-menu="menu"
+              >
+                <li
+                  class="cursor-pointer rounded-md px-0.5 py-1 hover:bg-[#2a2d35]"
+                  data-drop-menu="option"
+                  data-option="Aprobada"
+                >
+                  Aprobada
+                </li>
+                <li
+                  class="cursor-pointer rounded-md px-0.5 py-1 hover:bg-[#2a2d35]"
+                  data-drop-menu="option"
+                  data-option="Cursando"
+                >
+                  Cursando
+                </li>
+                <li
+                  class="cursor-pointer rounded-md px-0.5 py-1 hover:bg-[#2a2d35]"
+                  data-drop-menu="option"
+                  data-option="Regular"
+                >
+                  Regular
+                </li>
+                <li
+                  class="cursor-pointer rounded-md px-0.5 py-1 hover:bg-[#2a2d35]"
+                  data-drop-menu="option"
+                  data-option="Recursar"
+                >
+                  Recursar
+                </li>
+                <li
+                  class="cursor-pointer rounded-md px-0.5 py-1 hover:bg-[#2a2d35]"
+                  data-drop-menu="option"
+                  data-option=""
+                >
+                  Quitar
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </template>
     <script src="js/scripts.js"></script>
   </body>

@@ -9,42 +9,42 @@
         "anio": "Primer Año",
         "materias": [
           {
-            "nombreMateria": "Tecnología Aplicada",
+            "nombre": "Tecnología Aplicada",
             "codigo": "07071",
             "dictado": "1°C",
             "correlativas": [],
             "estado": "Aprobada"
           },
           {
-            "nombreMateria": "Algebra y Geometría Analítica",
+            "nombre": "Algebra y Geometría Analítica",
             "codigo": "01017",
             "dictado": "1°C",
             "correlativas": [],
             "estado": "Aprobada"
           },
           {
-            "nombreMateria": "Algoritmo y Estructuras de Datos",
+            "nombre": "Algoritmo y Estructuras de Datos",
             "codigo": "07030",
             "dictado": "1°C",
             "correlativas": [],
             "estado": "Aprobada"
           },
           {
-            "nombreMateria": "Teoría de Sistemas y Organizaciones",
+            "nombre": "Teoría de Sistemas y Organizaciones",
             "codigo": "07032",
             "dictado": "2°C",
             "correlativas": [],
             "estado": "Aprobada"
           },
           {
-            "nombreMateria": "Problemática Regional",
+            "nombre": "Problemática Regional",
             "codigo": "02004",
             "dictado": "2°C",
             "correlativas": [],
             "estado": null
           },
           {
-            "nombreMateria": "Arquitectura de Computadores I",
+            "nombre": "Arquitectura de Computadores I",
             "codigo": "07031",
             "dictado": "2°C",
             "correlativas": [
@@ -53,7 +53,7 @@
             "estado": "Aprobada"
           },
           {
-            "nombreMateria": "Programación con Objetos I",
+            "nombre": "Programación con Objetos I",
             "codigo": "07033",
             "dictado": "2°C",
             "correlativas": [
@@ -62,14 +62,14 @@
             "estado": "Aprobada"
           },
           {
-            "nombreMateria": "Análisis y Producción del Discurso",
+            "nombre": "Análisis y Producción del Discurso",
             "codigo": "02001",
             "dictado": "1°C",
             "correlativas": [],
             "estado": "Cursando"
           },
           {
-            "nombreMateria": "Matemáticas Discretas",
+            "nombre": "Matemáticas Discretas",
             "codigo": "01018",
             "dictado": "1°C",
             "correlativas": [],
@@ -81,7 +81,7 @@
         "anio": "Segundo Año",
         "materias": [
           {
-            "nombreMateria": "Análisis Matemático I",
+            "nombre": "Análisis Matemático I",
             "codigo": "01019",
             "dictado": "1°C",
             "correlativas": [
@@ -90,7 +90,7 @@
             "estado": "Aprobada"
           },
           {
-            "nombreMateria": "Programación con Objetos II",
+            "nombre": "Programación con Objetos II",
             "codigo": "07034",
             "dictado": "1°C",
             "correlativas": [
@@ -99,14 +99,14 @@
             "estado": "Aprobada"
           },
           {
-            "nombreMateria": "Electiva",
+            "nombre": "Electiva",
             "codigo": "00004",
             "dictado": "1°C",
             "correlativas": [],
             "estado": null
           },
           {
-            "nombreMateria": "Arquitectura de Computadores II",
+            "nombre": "Arquitectura de Computadores II",
             "codigo": "07036",
             "dictado": "1°C",
             "correlativas": [
@@ -115,7 +115,7 @@
             "estado": "Aprobada"
           },
           {
-            "nombreMateria": "Lenguajes Formales",
+            "nombre": "Lenguajes Formales",
             "codigo": "07035",
             "dictado": "1°C",
             "correlativas": [
@@ -124,14 +124,14 @@
             "estado": "Equivalencia"
           },
           {
-            "nombreMateria": "Universidad, Ciencia y Sociedad",
+            "nombre": "Universidad, Ciencia y Sociedad",
             "codigo": "02036",
             "dictado": "2°C",
             "correlativas": [],
             "estado": "Aprobada"
           },
           {
-            "nombreMateria": "Ingeniería de Software I",
+            "nombre": "Ingeniería de Software I",
             "codigo": "07041",
             "dictado": "2°C",
             "correlativas": [
@@ -141,7 +141,7 @@
             "estado": "Aprobada"
           },
           {
-            "nombreMateria": "Probabilidad y Estadística",
+            "nombre": "Probabilidad y Estadística",
             "codigo": "01020",
             "dictado": "2°C",
             "correlativas": [
@@ -150,7 +150,7 @@
             "estado": "Recursar"
           },
           {
-            "nombreMateria": "Sistemas Operativos I",
+            "nombre": "Sistemas Operativos I",
             "codigo": "07039",
             "dictado": "2°C",
             "correlativas": [
@@ -159,7 +159,7 @@
             "estado": "Regular"
           },
           {
-            "nombreMateria": "Base de Datos I",
+            "nombre": "Base de Datos I",
             "codigo": "07014",
             "dictado": "2°C",
             "correlativas": [
@@ -169,7 +169,7 @@
             "estado": "Aprobada"
           },
           {
-            "nombreMateria": "Comunicación y Redes I",
+            "nombre": "Comunicación y Redes I",
             "codigo": "07040",
             "dictado": "2°C",
             "correlativas": [
@@ -183,7 +183,7 @@
         "anio": "Tecer Año",
         "materias": [
           {
-            "nombreMateria": "Análisis Matemático II",
+            "nombre": "Análisis Matemático II",
             "codigo": "01021",
             "dictado": "1°C",
             "correlativas": [
@@ -193,7 +193,7 @@
             "estado": null
           },
           {
-            "nombreMateria": "Base de Datos II",
+            "nombre": "Base de Datos II",
             "codigo": "07017",
             "dictado": "1°C",
             "correlativas": [
@@ -203,7 +203,7 @@
             "estado": "Cursando"
           },
           {
-            "nombreMateria": "Comunicación y Redes II",
+            "nombre": "Comunicación y Redes II",
             "codigo": "07045",
             "dictado": "1°C",
             "correlativas": [
@@ -212,7 +212,7 @@
             "estado": "Cursando"
           },
           {
-            "nombreMateria": "Ingeniería de Software II",
+            "nombre": "Ingeniería de Software II",
             "codigo": "07043",
             "dictado": "1°C",
             "correlativas": [
@@ -221,7 +221,7 @@
             "estado": "Aprobada"
           },
           {
-            "nombreMateria": "Interfaces de Usuarios y Tecnologías Web",
+            "nombre": "Interfaces de Usuarios y Tecnologías Web",
             "codigo": "07044",
             "dictado": "1°C",
             "correlativas": [
@@ -230,7 +230,7 @@
             "estado": "Cursando"
           },
           {
-            "nombreMateria": "Programación con Objetos III",
+            "nombre": "Programación con Objetos III",
             "codigo": "07048",
             "dictado": "2°C",
             "correlativas": [
@@ -241,7 +241,7 @@
             "estado": "Aprobada"
           },
           {
-            "nombreMateria": "Matemática Aplicada",
+            "nombre": "Matemática Aplicada",
             "codigo": "01022",
             "dictado": "2°C",
             "correlativas": [
@@ -250,7 +250,7 @@
             "estado": null
           },
           {
-            "nombreMateria": "Explotación de Datos",
+            "nombre": "Explotación de Datos",
             "codigo": "07046",
             "dictado": "2°C",
             "correlativas": [
@@ -259,7 +259,7 @@
             "estado": null
           },
           {
-            "nombreMateria": "Taller de Redes",
+            "nombre": "Taller de Redes",
             "codigo": "07047",
             "dictado": "2°C",
             "correlativas": [
@@ -268,7 +268,7 @@
             "estado": null
           },
           {
-            "nombreMateria": "Sistemas Operativos II",
+            "nombre": "Sistemas Operativos II",
             "codigo": "07050",
             "dictado": "2°C",
             "correlativas": [
@@ -284,7 +284,7 @@
         "anio": "Cuarto Año",
         "materias": [
           {
-            "nombreMateria": "Dirección y Evaluación de Proyectos Informáticos",
+            "nombre": "Dirección y Evaluación de Proyectos Informáticos",
             "codigo": "07023",
             "dictado": "1°C",
             "correlativas": [
@@ -293,7 +293,7 @@
             "estado": "Regular"
           },
           {
-            "nombreMateria": "Arquitectura de Software",
+            "nombre": "Arquitectura de Software",
             "codigo": "07051",
             "dictado": "1°C",
             "correlativas": [
@@ -303,7 +303,7 @@
             "estado": null
           },
           {
-            "nombreMateria": "Modelos, Simulación y Teoría de la Decisión",
+            "nombre": "Modelos, Simulación y Teoría de la Decisión",
             "codigo": "01023",
             "dictado": "1°C",
             "correlativas": [
@@ -312,7 +312,7 @@
             "estado": null
           },
           {
-            "nombreMateria": "Metodología de la Investigación",
+            "nombre": "Metodología de la Investigación",
             "codigo": "02037",
             "dictado": "1°C",
             "correlativas": [
@@ -322,7 +322,7 @@
             "estado": null
           },
           {
-            "nombreMateria": "Paradigmas de Programación",
+            "nombre": "Paradigmas de Programación",
             "codigo": "07052",
             "dictado": "1°C",
             "correlativas": [
@@ -332,7 +332,7 @@
             "estado": null
           },
           {
-            "nombreMateria": "Lenguajes de Programación",
+            "nombre": "Lenguajes de Programación",
             "codigo": "07054",
             "dictado": "1°C",
             "correlativas": [
@@ -342,7 +342,7 @@
             "estado": null
           },
           {
-            "nombreMateria": "Infraestructura de Sistemas",
+            "nombre": "Infraestructura de Sistemas",
             "codigo": "07057",
             "dictado": "2°C",
             "correlativas": [
@@ -352,7 +352,7 @@
             "estado": null
           },
           {
-            "nombreMateria": "Desarrollo de Compiladores",
+            "nombre": "Desarrollo de Compiladores",
             "codigo": "07058",
             "dictado": "2°C",
             "correlativas": [
@@ -361,7 +361,7 @@
             "estado": null
           },
           {
-            "nombreMateria": "Inteligencia Artificial",
+            "nombre": "Inteligencia Artificial",
             "codigo": "07059",
             "dictado": "2°C",
             "correlativas": [
@@ -370,7 +370,7 @@
             "estado": null
           },
           {
-            "nombreMateria": "Práctica Profesional",
+            "nombre": "Práctica Profesional",
             "codigo": "07060",
             "dictado": "2°C",
             "correlativas": [
@@ -387,21 +387,21 @@
         "anio": "Quinto Año",
         "materias": [
           {
-            "nombreMateria": "Optativa I",
+            "nombre": "Optativa I",
             "codigo": "00009",
             "dictado": "1°C",
             "correlativas": [],
             "estado": null
           },
           {
-            "nombreMateria": "Aspectos Legales y Sociales de la Informática",
+            "nombre": "Aspectos Legales y Sociales de la Informática",
             "codigo": "02038",
             "dictado": "1°C",
             "correlativas": [],
             "estado": null
           },
           {
-            "nombreMateria": "Ingeniería de Software III",
+            "nombre": "Ingeniería de Software III",
             "codigo": "07062",
             "dictado": "1°C",
             "correlativas": [
@@ -410,7 +410,7 @@
             "estado": null
           },
           {
-            "nombreMateria": "Sistemas de Tiempo Real y Misión Crítica",
+            "nombre": "Sistemas de Tiempo Real y Misión Crítica",
             "codigo": "07064",
             "dictado": "1°C",
             "correlativas": [
@@ -419,21 +419,21 @@
             "estado": null
           },
           {
-            "nombreMateria": "Economía I",
+            "nombre": "Economía I",
             "codigo": "09021",
             "dictado": "1°C",
             "correlativas": [],
             "estado": null
           },
           {
-            "nombreMateria": "Optativa II",
+            "nombre": "Optativa II",
             "codigo": "00010",
             "dictado": "2°C",
             "correlativas": [],
             "estado": null
           },
           {
-            "nombreMateria": "Seguridad y Auditoría",
+            "nombre": "Seguridad y Auditoría",
             "codigo": "07065",
             "dictado": "2°C",
             "correlativas": [
@@ -444,7 +444,7 @@
             "estado": null
           },
           {
-            "nombreMateria": "Teoría de la Computación",
+            "nombre": "Teoría de la Computación",
             "codigo": "07067",
             "dictado": "2°C",
             "correlativas": [
@@ -455,14 +455,14 @@
             "estado": null
           },
           {
-            "nombreMateria": "Administración y Gestión de las Organizaciones",
+            "nombre": "Administración y Gestión de las Organizaciones",
             "codigo": "08022",
             "dictado": "2°C",
             "correlativas": [],
             "estado": null
           },
           {
-            "nombreMateria": "Economía II",
+            "nombre": "Economía II",
             "codigo": "09022",
             "dictado": "2°C",
             "correlativas": [
@@ -471,7 +471,7 @@
             "estado": null
           },
           {
-            "nombreMateria": "Trabajo Final",
+            "nombre": "Trabajo Final",
             "codigo": "07068",
             "dictado": "Anual",
             "correlativas": [
