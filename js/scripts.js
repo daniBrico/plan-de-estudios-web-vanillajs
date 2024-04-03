@@ -120,16 +120,20 @@ const loadInformationSmallDesign = async function () {
     const $templateDesignSmall = d.getElementById(
         'design-small-template',
       ).content,
-      $cloneYearCareerTitle = $templateDesignSmall
-        .querySelector('h2')
+      $cloneYearCareerTitleContainer = $templateDesignSmall
+        .querySelector('div')
         .cloneNode(true)
 
-    $cloneYearCareerTitle.textContent = `${el.anio} (${el.materias.length})`
+    console.log($cloneYearCareerTitleContainer)
+    // console.log($templateDesignSmall.querySelector('div'))
 
-    $fragment.appendChild($cloneYearCareerTitle)
+    $cloneYearCareerTitleContainer.querySelector('h2').textContent =
+      `${el.anio} (${el.materias.length})`
+
+    $fragment.appendChild($cloneYearCareerTitleContainer)
 
     const $cloneSubjectInformationContainer = $templateDesignSmall
-      .querySelector('div')
+      .querySelectorAll('div')[1]
       .cloneNode()
 
     el.materias.forEach((subject, j) => {
