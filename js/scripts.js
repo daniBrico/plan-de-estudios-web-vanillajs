@@ -5,6 +5,21 @@ let $dropdownOpen = null,
   career = null
 
 // Funciones
+const outwardSearch = function ($el) {
+  while ($el !== document.body) {
+    if ($el.hasAttribute('data-state')) {
+      $el.classList.toggle('border-secondColor')
+      $el.classList.toggle('shadow-sm')
+      $el.classList.toggle('border-firstColor')
+      $el.classList.toggle('shadow-shadowSelect')
+      break
+    }
+    $el = $el.parentNode
+  }
+
+  return $el
+}
+
 const openCloseMenu = function ($select, $caret, $menu, e) {
   $select.classList.toggle('shadow-shadowSelect')
   $select.classList.toggle('border-[#f15a5c]')
@@ -15,34 +30,25 @@ const openCloseMenu = function ($select, $caret, $menu, e) {
   $menu.classList.toggle('opacity-0')
   $menu.classList.toggle('invisible')
 
-  let currentElement
+  const outwardElement = outwardSearch(e)
 
-  if (e !== undefined) {
-    let currentElement = e.target
+  if (outwardElement.tagName === 'TR') {
+    console.log(outwardElement)
+    outwardElement.classList.toggle('hover:bg-hoverColor')
 
-    while (currentElement !== document.body) {
-      if (currentElement.hasAttribute('data-state')) {
-        currentElement.classList.toggle('border-secondColor')
-        currentElement.classList.toggle('shadow-sm')
-        currentElement.classList.toggle('border-firstColor')
-        currentElement.classList.toggle('shadow-shadowSelect')
-        break
-      }
-      currentElement = currentElement.parentNode
+    let i = 0
+    while (i < 2) {
+      outwardElement.querySelectorAll('td')[i].classList.toggle('underline')
+      outwardElement
+        .querySelectorAll('td')
+        [i].classList.toggle('text-firstColor')
+      // outwardElement.querySelectorAll('td')[i].classList.toggle('font-bold')
+      outwardElement.querySelectorAll('td')[i].classList.toggle('tracking-wide')
+
+      i++
     }
-  } else {
-    currentElement = $dropdownOpen.$select
 
-    while (currentElement !== document.body) {
-      if (currentElement.hasAttribute('data-state')) {
-        currentElement.classList.toggle('border-secondColor')
-        currentElement.classList.toggle('shadow-sm')
-        currentElement.classList.toggle('border-firstColor')
-        currentElement.classList.toggle('shadow-shadowSelect')
-        break
-      }
-      currentElement = currentElement.parentNode
-    }
+    // console.log(outwardElement.querySelectorAll('td')[0])
   }
 }
 
@@ -241,7 +247,7 @@ const generateDropdown = function () {
   $select.addEventListener('click', (e) => {
     if ($dropdownOpen !== null) {
       if ($select === $dropdownOpen.$select) {
-        openCloseMenu($select, $caret, $menu)
+        openCloseMenu($select, $caret, $menu, $dropdownOpen.$select)
         $dropdownOpen = null
         return
       }
@@ -249,6 +255,7 @@ const generateDropdown = function () {
         $dropdownOpen.$select,
         $dropdownOpen.$caret,
         $dropdownOpen.$menu,
+        $dropdownOpen.$select,
       )
     }
     $dropdownOpen = {
@@ -256,7 +263,7 @@ const generateDropdown = function () {
       $caret,
       $menu,
     }
-    openCloseMenu($select, $caret, $menu, e)
+    openCloseMenu($select, $caret, $menu, $dropdownOpen.$select)
   })
 
   const $options = $cloneTemplateDropdown.querySelectorAll('ul > li'),
@@ -284,7 +291,8 @@ const generateDropdown = function () {
         'hover:shadow-none',
         'hover:bg-opacity-75',
       )
-      openCloseMenu($select, $caret, $menu)
+
+      openCloseMenu($select, $caret, $menu, e.target)
       $dropdownOpen = null
 
       let currentElement = e.target
@@ -335,6 +343,7 @@ d.addEventListener('click', (e) => {
         $dropdownOpen.$select,
         $dropdownOpen.$caret,
         $dropdownOpen.$menu,
+        $dropdownOpen.$select,
       )
       $dropdownOpen = null
     }

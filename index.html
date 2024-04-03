@@ -99,9 +99,11 @@
 
     <template id="tr-template">
       <tr class="hover:bg-hoverColor">
-        <td class="font- border-b-2 border-back p-2 text-center text-base"></td>
         <td
-          class="whitespace-nowrap border-b-2 border-l-2 border-back p-2 text-base"
+          class="border-b-2 border-back p-2 text-center text-base transition"
+        ></td>
+        <td
+          class="whitespace-nowrap border-b-2 border-l-2 border-back p-2 text-base transition"
         ></td>
         <td
           class="border-b-2 border-l-2 border-back p-2 text-center text-base"
@@ -118,21 +120,21 @@
     <template id="dropdown-template">
       <div class="relative min-w-28" data-drop-menu="dropdown">
         <div
-          class="glass hover:shadow-sha duration-600 group z-10 flex min-h-8 cursor-pointer items-center justify-between rounded border-2 border-solid border-firstColor px-2 text-white transition-shadow hover:border-white hover:bg-firstColor"
+          class="select glass hover:shadow-sha duration-600 group z-10 flex min-h-8 cursor-pointer items-center justify-between rounded border-2 border-solid border-firstColor px-2 text-white transition-shadow hover:border-white hover:bg-firstColor"
           data-drop-menu="select"
         >
           <span
             data-drop-menu="selected"
             data-option=""
-            class="text-firstColor group-hover:text-white"
+            class="selected text-firstColor group-hover:text-white"
           ></span>
           <div
-            class="h-0 w-0 border-l-[5px] border-r-[5px] border-t-[6px] border-l-transparent border-r-transparent border-t-firstColor transition duration-300 group-hover:border-t-white"
+            class="caret h-0 w-0 border-l-[5px] border-r-[5px] border-t-[6px] border-l-transparent border-r-transparent border-t-firstColor transition duration-300 group-hover:border-t-white"
             data-drop-menu="caret"
           ></div>
         </div>
         <ul
-          class="glass invisible absolute left-1/2 top-9 z-30 flex w-full -translate-x-1/2 flex-col gap-0.5 rounded-md border border-solid px-2 py-2 text-center text-firstColor opacity-0 shadow-shadowBox transition duration-300"
+          class="menu glass invisible absolute left-1/2 top-9 z-30 flex w-full -translate-x-1/2 flex-col gap-0.5 rounded-md border border-solid px-2 py-2 text-center text-firstColor opacity-0 shadow-shadowBox transition duration-300"
           data-drop-menu="menu"
         >
           <li
