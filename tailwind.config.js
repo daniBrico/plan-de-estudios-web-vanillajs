@@ -10,6 +10,7 @@ module.exports = {
       },
       colors: {
         firstColor: '#f15a5c',
+        firstColor2: '#6D5E4E',
         secondColor: '#dddde0',
         thirdColor: '#ececee',
         fourthColor: '#f15a5c',
@@ -25,7 +26,8 @@ module.exports = {
         regularColorFondo: '#7d27ff81',
       },
       boxShadow: {
-        shadowSelect: '0 0 0.8em #26489a',
+        shadowSelect: '0 0 0.8em #f15a5c',
+        // shadowSelect: '0 0 0.8em #26489a',
         shadowBox: '0 0 0.8em #dddde0',
       },
     },

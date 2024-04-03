@@ -5,15 +5,45 @@ let $dropdownOpen = null,
   career = null
 
 // Funciones
-const openCloseMenu = function ($select, $caret, $menu) {
+const openCloseMenu = function ($select, $caret, $menu, e) {
   $select.classList.toggle('shadow-shadowSelect')
-  $select.classList.toggle('border-[#2a2f3b]')
-  $select.classList.toggle('border-[#26489a]')
+  $select.classList.toggle('border-[#f15a5c]')
+  $select.classList.toggle('border-[#f15a5c]')
 
   $caret.classList.toggle('rotate-180')
 
   $menu.classList.toggle('opacity-0')
   $menu.classList.toggle('invisible')
+
+  let currentElement
+
+  if (e !== undefined) {
+    let currentElement = e.target
+
+    while (currentElement !== document.body) {
+      if (currentElement.hasAttribute('data-state')) {
+        currentElement.classList.toggle('border-secondColor')
+        currentElement.classList.toggle('shadow-sm')
+        currentElement.classList.toggle('border-firstColor')
+        currentElement.classList.toggle('shadow-shadowSelect')
+        break
+      }
+      currentElement = currentElement.parentNode
+    }
+  } else {
+    currentElement = $dropdownOpen.$select
+
+    while (currentElement !== document.body) {
+      if (currentElement.hasAttribute('data-state')) {
+        currentElement.classList.toggle('border-secondColor')
+        currentElement.classList.toggle('shadow-sm')
+        currentElement.classList.toggle('border-firstColor')
+        currentElement.classList.toggle('shadow-shadowSelect')
+        break
+      }
+      currentElement = currentElement.parentNode
+    }
+  }
 }
 
 const getDataCareer = async function (careerName) {
@@ -124,9 +154,6 @@ const loadInformationSmallDesign = async function () {
         .querySelector('div')
         .cloneNode(true)
 
-    console.log($cloneYearCareerTitleContainer)
-    // console.log($templateDesignSmall.querySelector('div'))
-
     $cloneYearCareerTitleContainer.querySelector('h2').textContent =
       `${el.anio} (${el.materias.length})`
 
@@ -211,7 +238,7 @@ const generateDropdown = function () {
     $caret = $select.querySelector('div'),
     $menu = $cloneTemplateDropdown.querySelector('ul')
 
-  $select.addEventListener('click', () => {
+  $select.addEventListener('click', (e) => {
     if ($dropdownOpen !== null) {
       if ($select === $dropdownOpen.$select) {
         openCloseMenu($select, $caret, $menu)
@@ -229,7 +256,7 @@ const generateDropdown = function () {
       $caret,
       $menu,
     }
-    openCloseMenu($select, $caret, $menu)
+    openCloseMenu($select, $caret, $menu, e)
   })
 
   const $options = $cloneTemplateDropdown.querySelectorAll('ul > li'),
@@ -241,10 +268,22 @@ const generateDropdown = function () {
       $selected.dataset.option = option.dataset.option
 
       $options.forEach((op) => {
-        op.classList.remove('bg-[#23242a]')
+        op.classList.remove(
+          'bg-firstColor',
+          'text-white',
+          'shadow-shadowSelect',
+          'hover:shadow-none',
+          'hover:bg-opacity-75',
+        )
       })
 
-      option.classList.add('bg-[#23242a]')
+      option.classList.add(
+        'bg-firstColor',
+        'text-white',
+        'shadow-shadowSelect',
+        'hover:shadow-none',
+        'hover:bg-opacity-75',
+      )
       openCloseMenu($select, $caret, $menu)
       $dropdownOpen = null
 
@@ -254,8 +293,15 @@ const generateDropdown = function () {
         if (currentElement.hasAttribute('data-state')) {
           currentElement.dataset.state = $selected.dataset.option
 
-          let classId =
-            currentElement.classList[currentElement.classList.length - 1]
+          let classId = '',
+            classes = currentElement.classList
+
+          for (let i = 0; i < classes.length; i++) {
+            if (classes[i].startsWith('group')) {
+              classId = classes[i]
+              break
+            }
+          }
 
           updateBotton(
             currentElement.tagName === 'DIV'
