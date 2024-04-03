@@ -33,7 +33,6 @@ const openCloseMenu = function ($select, $caret, $menu, e) {
   const outwardElement = outwardSearch(e)
 
   if (outwardElement.tagName === 'TR') {
-    console.log(outwardElement)
     outwardElement.classList.toggle('hover:bg-hoverColor')
 
     let i = 0
@@ -47,8 +46,6 @@ const openCloseMenu = function ($select, $caret, $menu, e) {
 
       i++
     }
-
-    // console.log(outwardElement.querySelectorAll('td')[0])
   }
 }
 
@@ -228,11 +225,11 @@ const updateBotton = function ($el, stateValue) {
   $selected.dataset.option = stateValue
 
   $allOptions.forEach((option) => {
-    option.classList.remove('bg-[#23242a]')
+    option.classList.remove('bg-firstColor')
   })
 
   $allOptions.forEach((op) => {
-    if (op.dataset.option === stateValue) op.classList.add('bg-[#23242a]')
+    if (op.dataset.option === stateValue) op.classList.add('bg-firstColor')
   })
 }
 
