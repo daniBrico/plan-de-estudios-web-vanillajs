@@ -42,16 +42,10 @@ const getDataCareer = async function (careerName) {
   }
 }
 
-const loadInformationTableDesing = async function () {
-  // const career = await getDataCareer('Licenciatura en Informática')
-
-  const $fragment = d.createDocumentFragment(),
-    $article = d.getElementsByTagName('article')
-
+const loadHeaderInformation = function () {
   const $titleCareer = d.getElementById('titleCareer'),
     $careerDuration = d.getElementById('careerDuration')
 
-  // Esto se tiene que cargar una sola vez. Tanto para desktop como para mobile. Revisar.
   $titleCareer.textContent = career.nombreCarrera
   $careerDuration.textContent = `DURACIÓN: ${career.duracionCarrera} AÑOS`
 
@@ -62,6 +56,11 @@ const loadInformationTableDesing = async function () {
     $subCareer.textContent = `${career.tituloIntermedio}`
     $subCareerDuration.textContent = `DURACIÓN: ${career.duracionDelTituloIntermedio} AÑOS`
   }
+}
+
+const loadInformationTableDesing = async function () {
+  const $fragment = d.createDocumentFragment(),
+    $article = d.getElementsByTagName('article')
 
   career.listaDeMateriasPorAnio.forEach((el, i) => {
     const $templateTableInfo = d.getElementById('template-table'),
@@ -276,6 +275,7 @@ d.addEventListener('DOMContentLoaded', async () => {
   await loadInformationLocal()
   loadInformationTableDesing()
   loadInformationSmallDesign()
+  loadHeaderInformation()
 })
 
 d.addEventListener('click', (e) => {

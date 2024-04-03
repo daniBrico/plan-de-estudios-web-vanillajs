@@ -7,29 +7,44 @@
     <link rel="stylesheet" href="tailwind.css" />
     <title>Document</title>
   </head>
-
   <body>
-    <header class="bg-fourthColor py-8">
-      <div class="mx-auto flex max-w-5xl justify-around">
-        <div>
+    <header class="bg-fourthColor px-4 py-2">
+      <div
+        class="mx-auto flex max-w-4xl flex-col gap-4 sm:flex-row sm:items-center lg:gap-8"
+      >
+        <div
+          class="order-1 flex flex-col justify-center lg:flex-row lg:items-center lg:gap-4"
+        >
+          <div>
+            <h1
+              class="mt-1 text-pretty text-2xl font-extrabold tracking-wide text-white"
+              id="titleCareer"
+            ></h1>
+            <p class="text-sm text-white" id="careerDuration"></p>
+          </div>
+          <div>
+            <h2
+              class="mt-0.5 text-xl font-extrabold tracking-wide text-white lg:text-2xl"
+              id="subCareer"
+            ></h2>
+            <p class="lg:text-md text-sm text-white" id="subCareerDuration"></p>
+          </div>
+        </div>
+        <div class="order-0 mx-auto sm:mx-0">
           <a
             href="https://www.uno.edu.ar/"
             target="_blank"
             rel="noreferrer noopener"
             ><img
-              class="w-44"
+              class="hidden w-28 sm:block sm:w-24"
               src="/public/src/logoUNO.svg"
               alt="Logo de la Universidad Nacional del Oeste"
-          /></a>
-        </div>
-        <div class="flex flex-col justify-center">
-          <h1 class="text-5xl font-extrabold text-white" id="titleCareer"></h1>
-          <p class="text-white" id="careerDuration"></p>
-          <h2
-            class="mt-5 text-5xl font-extrabold text-white"
-            id="subCareer"
-          ></h2>
-          <p class="text-white" id="subCareerDuration"></p>
+            />
+            <span
+              class="inline-block border-y-2 text-center text-3xl font-extrabold tracking-wide text-white sm:hidden"
+              >UNO</span
+            >
+          </a>
         </div>
       </div>
     </header>
